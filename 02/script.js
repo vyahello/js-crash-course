@@ -117,7 +117,6 @@ console.log(calcAge(y)); // NaN
 console.log(y + 10); // 1990,196710
 console.log(calcAge(y[0])); // 47
 console.log(jonas[5]); // undefined
-*/
 
 // array methods
 const l = new Array(10, 11, 20); //
@@ -135,3 +134,35 @@ friends.shift(); // remove first element
 console.log(friends);
 console.log(friends.indexOf('Mike')); // index of element - 0
 console.log(friends.includes('Mike')); // has 'Mike' in an array -> true
+*/
+
+// objects - to group together different vars
+// difference between array is that the order does not matter
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Shmed',
+    age: 31,
+    job: 'teacher',
+    friends: ['Mike', 'Luke']
+}
+console.log(jonas);
+console.log(jonas.firstName);
+console.log(jonas['firstName']); // same
+const nameKey = 'Name'
+console.log(jonas['first' + nameKey]); // same
+
+const interestedIn = prompt('What do you want to know about Jonas?')
+console.log(jonas[interestedIn]);
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+}
+else {
+    console.log('Wrong request')
+}
+jonas.location = 'Portugal'; // add key to the object
+jonas['twitter'] = 'lala';
+console.log(jonas);
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, best one is ${jonas.friends[0]}`)
+
