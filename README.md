@@ -1,6 +1,6 @@
 # JS bootcamp
 
-> Javascript crash course based on [Udemy JS training](https://github.com/jonasschmedtmann/complete-javascript-course). Stands for training target only.
+> Javascript crash course based on [Udemy JS training](https://www.udemy.com/course/the-complete-javascript-course). Stands for learning target only.
 
 ## Tools
 
