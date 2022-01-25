@@ -75,7 +75,6 @@ function processor(apples, oranges) {
     return juice;
 }
 console.log(processor(2, 3));
-*/
 
 const calcAge = function (birth) {
     return 2037 - birth;
@@ -96,3 +95,43 @@ const retire = (birth, firstName) => {
 }
 console.log(retire(1991, 'Jake'));
 console.log(retire(1950, 'Luke'));
+
+// Arrays - data structure
+const friends = ['Mike', 'Sam', 'Peter'];
+const years = new Array(1991, 1992, 1993); // array func
+console.log(friends[0]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]); // get last value
+
+friends[2] = 'Jay';
+console.log(friends);
+
+const jonas = ['Jonas', 'Shmed', 20, friends];
+console.log(jonas);
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+const y = [1990, 1967]
+console.log(calcAge(y)); // NaN
+console.log(y + 10); // 1990,196710
+console.log(calcAge(y[0])); // 47
+console.log(jonas[5]); // undefined
+*/
+
+// array methods
+const l = new Array(10, 11, 20); //
+typeof l; // object
+const friends = ['Mike', 'Sam', 'Peter'];
+const newLength = friends.push('Jay');
+console.log(newLength); // 4
+friends.unshift('John'); // add to the beginning
+console.log(friends);
+
+const popped = friends.pop(); // remove last element
+console.log(popped);
+console.log(friends);
+friends.shift(); // remove first element
+console.log(friends);
+console.log(friends.indexOf('Mike')); // index of element - 0
+console.log(friends.includes('Mike')); // has 'Mike' in an array -> true
