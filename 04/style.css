@@ -1,0 +1,58 @@
+* {
+  /* select all element on the page */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellow; /* property, add color to body element */
+  font-family: Arial;
+  font-size: 20px;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 50px;
+  padding-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.first {
+  color: red;
+}
+
+#your-name {
+  background-color: blue;
+  border: 5px solid #444;
+  width: 400px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+input,
+button {
+  /* applied to both selectors */
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: yellowgreen;
+}
+
+#your-name h2 {
+  color: brown;
+}
+
+#course-image {
+  height: 600px;
+}
