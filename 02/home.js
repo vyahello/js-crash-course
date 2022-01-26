@@ -27,7 +27,6 @@ console.log(bills, tips)
 console.log(bills + tips); // will be a string '125,555,4418.75,111,111'
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
-*/
 
 // objects
 const getSummary = function (fullName, mass, height) {
@@ -55,3 +54,29 @@ if (mark.bmi > john.bmi) {
 else {
     onsole.log(`${john.fullName}'s BMI is greater than ${mark.fullName} ${mark.bmi}`)
 }
+*/
+
+// loops
+const bills = [22, 295, 176, 440, 37, 105];
+let tips = [];
+let totals = [];
+
+const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2
+
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
+
+console.log(tips);
+console.log(totals);
+
+const calcAverage = function (arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage([10, 11, 20]));

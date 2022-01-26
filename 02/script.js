@@ -164,7 +164,6 @@ jonas['twitter'] = 'lala';
 console.log(jonas);
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, best one is ${jonas.friends[0]}`)
-*/
 
 // object methods, arrays are also objects - has also methods
 const jonas = {
@@ -187,3 +186,79 @@ console.log(jonas['calcAge']());
 console.log(jonas.age);
 console.log(jonas.getSummary());
 
+// loops
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights rep ${rep}`);
+// }
+
+const jonas = [
+    'Jonas',
+    'Shmed',
+    31,
+    'teacher',
+    ['Mike', 'Luke', 'Sam'], // object
+    true,
+]
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]);
+    // types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log('CONTINUE')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== 'string') continue
+    console.log(jonas[i], typeof jonas[i]);
+}
+console.log('BREAK')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === 'number') break
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+const jonas = [
+    'Jonas',
+    'Shmed',
+    31,
+    'teacher',
+    ['Mike', 'Luke', 'Sam'],
+    true,
+]
+
+for (let i = jonas.length - 1; i > 0; i--) { // loop reverse
+    console.log(jonas[i]);
+};
+
+for (let exersice = 1; exersice < 4; exersice++) {
+    console.log(`---- Starting exercise ${exersice} ----`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`---- Starting rep ${rep} ----`);
+    }
+}
+*/
+
+// while loop
+let rep = 1
+while (rep < 11) {
+    console.log(`Lifting ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end')
+};
