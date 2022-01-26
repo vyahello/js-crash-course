@@ -134,7 +134,6 @@ friends.shift(); // remove first element
 console.log(friends);
 console.log(friends.indexOf('Mike')); // index of element - 0
 console.log(friends.includes('Mike')); // has 'Mike' in an array -> true
-*/
 
 // objects - to group together different vars
 // difference between array is that the order does not matter
@@ -165,4 +164,26 @@ jonas['twitter'] = 'lala';
 console.log(jonas);
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, best one is ${jonas.friends[0]}`)
+*/
+
+// object methods, arrays are also objects - has also methods
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Shmed',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Mike', 'Luke'],
+    hasLicense: true,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is ${this.calcAge()} years old and he has ${this.hasLicense ? 'a' : 'no'} driver's license`
+    }
+}
+console.log(jonas.calcAge());
+console.log(jonas['calcAge']());
+console.log(jonas.age);
+console.log(jonas.getSummary());
 
