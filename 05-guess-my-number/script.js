@@ -1,7 +1,7 @@
 'use strict';
 
 // DOM - complete representation of html documents
-// allows js to access html elements
+// allows js to access html elements, DOM is a WEB API.
 
 /*
 

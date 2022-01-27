@@ -1,4 +1,4 @@
-'use strict'; // activate string mode, should be very first line
+"use strict"; // activate string mode, should be very first line
 
 /*
 let hasDriversLicense = false;
@@ -250,15 +250,29 @@ for (let exersice = 1; exersice < 4; exersice++) {
 */
 
 // while loop
-let rep = 1
+let rep = 1;
 while (rep < 11) {
-    console.log(`Lifting ${rep}`);
-    rep++;
+  console.log(`Lifting ${rep}`);
+  rep++;
 }
 
 let dice = Math.trunc(Math.random() * 6) + 1;
 while (dice !== 6) {
-    console.log(`You rolled a ${dice}`);
-    dice = Math.trunc(Math.random() * 6) + 1;
-    if (dice === 6) console.log('Loop is about to end')
-};
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end");
+}
+
+// forEach applies func to every element in an array
+// does not create new array, used just to iterate over an array
+// returns undefined
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number, index, array) => {
+  // array if optional list of numbers
+  console.log("Index: " + index + " Value: " + number);
+  console.log(array);
+});
+
+// map - creates new array
+newN = numbers.map((number) => number + 1);
+console.log(newN);

@@ -39,6 +39,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng); // mush
+    console.log(otherIng); // ['onion', 'olives', 'spinach']
+  },
 };
 
 /*
@@ -143,7 +147,6 @@ const ingredients = [
 ];
 console.log(ingredients);
 restaurant.orderPasta(...ingredients);
-*/
 
 // Objects
 const newRest = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' }; // copy all properties from rest to new one
@@ -152,3 +155,42 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristor';
 console.log(restaurant); // different
 console.log(restaurantCopy); // different
+
+// REST pattern - to pack elements in an array
+const arr = [1, 2, ...[3, 4]];
+const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, others); // save 3, 4, 5, 6 to others var
+
+const [pizza, , risstto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risstto, otherFood); // Pizza Risotto ['Focaccia', 'Bruschetta']
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); // {thu: {…}, fri: {…}}
+
+// Functions
+const add = function (...numbers) {
+  // as positional args in python
+  console.log(typeof numbers); // object array
+  console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+    console.log(sum);
+  }
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2);
+
+const x = [23, 5, 7];
+add(...x); // unpack values
+
+restaurant.orderPizza('mush', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mush'); // will be mush and []
+*/
+
+// Logical
