@@ -360,7 +360,6 @@ console.log([...ques]);
 console.log(ques.entries());
 console.log(ques.values()); // MapIterator {'Best programming language?', 'C', 'Java', 'JS'}
 console.log(...ques.values());
-*/
 
 // What structure is better?
 // Data fetch from program, UI (user input in DOM), API
@@ -374,3 +373,109 @@ console.log(...ques.values());
 // Objects vs Maps
 // objects -  easier to write, access via obj.key, used in JSON
 // maps - better performance, when you need keys that are not strings
+
+// Strings
+const air = 'TAP Air Portugal';
+const plane = 'A320AA';
+console.log(plane.length);
+console.log(plane.indexOf('A'));
+console.log(plane.lastIndexOf('A'));
+console.log(air.slice(4)); // cut 'TAP ' and return new item
+console.log(air.slice(4, 7)); // Air
+
+console.log(air.slice(0, air.indexOf(' ')));
+console.log(air.slice(air.lastIndexOf(' ') + 1));
+
+console.log(air.slice(-2)); // last two letters - 'al
+console.log(air.slice(1, -1)); // 'AP Air Portuga'
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got middle seat');
+};
+checkMiddleSeat('11B');
+
+console.log(new String('john').slice(-1));
+
+console.log(air.toLowerCase());
+console.log(air.toUpperCase());
+
+const pass = 'jOhN';
+const passLower = pass.toLowerCase();
+const passCorrect = pass[0].toUpperCase() + passLower.slice(1);
+console.log(passCorrect);
+
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.Io \n';
+const nor = loginEmail.toLowerCase().trim();
+console.log(nor);
+
+// replacing
+const price = '288.97E';
+const priceUS = price.replace('E', '$');
+console.log(priceUS);
+
+// regex
+const anon = 'Lala door foo';
+console.log(anon.replace(/door/g, 'fake')); // use regex to replace
+
+const pll = 'A32neo';
+console.log(pll.includes('neo')); // true
+console.log(pll.startsWith('A'));
+console.log(pll.endsWith('o'));
+
+console.log('a+a+v+c'.split('+')); // array
+
+const [f, s] = 'A F'.split(' ');
+console.log(f, s);
+
+const newName = ['Mr.', f, s.toUpperCase()].join(' '); // join element into string
+console.log(newName);
+
+const capName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const word of names) {
+    // namesUpper.push(word[0].toUpperCase() + word.slice(1));
+    namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+const pass = 'jessin ann smith';
+capName(pass);
+
+// Padding
+const msg = 'Go to gate 23!';
+console.log(msg.padStart(25, '+')); // '+++++++++++Go to gate 23!' - length 25
+console.log('John'.padStart(23, '+').padEnd(35, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // convert to string
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(421213423243213));
+
+const msg2 = 'Bad weather ...';
+console.log(msg2.repeat(5)); // repeats the same string 5 times
+
+const plainesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'!'.repeat(5)}`);
+};
+plainesInLine(5); // There are 5 planes in line !!!!!
+*/
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  // replaceAll in ES2021
+  const out = `${type.startsWith('Delayed') ? 'Block' : 'GO'}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)} ${to} (${time.replace(':', 'h')})`.padStart(40);
+  console.log(out);
+}

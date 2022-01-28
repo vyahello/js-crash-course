@@ -65,4 +65,14 @@ border - goes around the padding and the content;
 margin - space between boxes;
 fill area - area that gest filled with background color or image
 
-
+// remove digits 
+const removeDigits = string => {
+  let newString = '';
+  for (const nextString of string) {
+      if (!Number(nextString)) {
+          newString += nextString;
+      }
+  }
+  return newString;
+};
+removeDigits('whowmethat');
