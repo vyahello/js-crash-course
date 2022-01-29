@@ -239,4 +239,205 @@ console.log(balance);
 let balance2 = 0;
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
+
+// chain methods
+const eurUsd = 1.1;
+const total = movements
+  .filter(move => move > 0)
+  .map(move => move * eurUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(total);
+
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, move) => acc + move, 0);
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, move) => acc + move, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => int >= 1)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1.movements);
+
+// Find - return el from array based on condition
+// uses callback func
+const firstWithDraw = movements.find(mov => mov < 0); // find only one element
+console.log(firstWithDraw);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log(e);
+  const amout = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  if (amout > 0 && receiverAcc?.username) {
+    console.log('Transfer valid');
+  }
+});
+
+// findIndex method
+// btnClose.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   console.log('Delete');
+// });
+const val = [1, 100, 200, 2];
+const idx = val.findIndex(el => el == 200); // 2, more complex than .indexOf(), uses callback func
+console.log(idx);
+console.log(val.indexOf(200));
+
+// some and every method
+// SOME
+console.log(movements.includes(-130));
+const anyDep = movements.some(mov => mov > 0); // if more than 1 dep, something above 0, same as .includes but uses condition
+console.log(anyDep);
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+  console.log(amount);
+});
+
+// EVERY - of all elements in an array safisfied the condition
+console.log(movements.every(mov => mov > 0));
+
+// Saparate callback
+const dep = mov => mov > 0;
+console.log(movements.some(dep));
+console.log(movements.every(dep));
+console.log(movements.filter(dep));
+
+// flat and flatMap
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8]; // [1, 2, 3, 4, 5, 6, 7, 8], goes onlt 1 level deep
+
+const arrDeep = [
+  [1, [2, 3]],
+  [4, [5, [6]]],
+  [7, [8]],
+];
+console.log(arrDeep.flat(3)); // 3 level deep
+
+const accountMovements = accounts.map(acc => acc.movements); // [[..], [..], ...]
+console.log(accountMovements);
+const allMove = accountMovements.flat();
+console.log(allMove);
+console.log(allMove.reduce((acc, el) => acc + el, 0));
+
+// flatMap
+const overallBal = accounts
+  .flatMap(acc => acc.movements) // replase map + flat, goes only 1 level deep
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBal);
+
+
+// Sorting - sort string by default, can pass callback func
+const owners = ['John', 'Zach', 'Adam'];
+console.log(owners.sort()); // return value and change parent object, sort strings
+console.log(owners);
+
+console.log(movements);
+console.log(movements.sort());
+
+// Asc
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+console.log(movements);
+
+// the same
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+// Desc
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+console.log(movements);
+
+// Fill Arrays
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4));
+const x = new Array(7); // [empty × 7]
+// x.fill(1);
+// console.log(x);
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 4, 6); // fill with 23 from 4-6 index
+console.log(arr);
+
+// Array.from
+const newArr = Array.from({ length: 7 }, () => 1);
+console.log(newArr);
+
+const z = Array.from({ length: 7 }, (_, idx) => idx + 1);
+console.log(z);
+
+const zz = Array.from({ length: 100 }, () => Math.trunc(Math.random() * 6));
+console.log(zz);
+
+labelBalance.addEventListener('click', function () {
+  const moveUI = Array.from(document.querySelector('.movements__value'), el =>
+    Number(el.textContent.replace('€', ''))
+  );
+  console.log(moveUI);
+});
 */
+
+const bandDep = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+console.log(bandDep);
+
+// const numDep1000 = accounts.flatMap(acc =>
+//   acc.movements.filter(mov => mov > 100)
+// ).length;
+// console.log(numDep1000);
+const numDep1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur > 1000 ? count + 1 : count), 0);
+console.log(numDep1000);
+
+let a = 10;
+console.log(a++); // return 10
+console.log(a); // return 11
+
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      //   cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+console.log(sums);
+
+const convertTitle = function (title) {
+  const exp = ['a', 'an', 'the', 'but', 'or'];
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word =>
+      exp.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(' ');
+  return titleCase;
+};
+console.log(convertTitle('this is a nice'));
