@@ -1,0 +1,26 @@
+h1 {
+  font-family: "Arial";
+}
+
+p {
+  font-family: monospace;
+}
+
+body {
+  font-size: 20px;
+}
+
+#two {
+  /* 20 px * 2 */
+  font-size: 2em;
+}
+
+p {
+  font-family: "Barrio", cursive;
+  /* font-style: italic; */
+  /* font-weight: bold; */
+}
+
+/* h1 {
+  text-align: center;
+} */
