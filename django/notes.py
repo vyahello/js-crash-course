@@ -13,3 +13,6 @@
 # - Framework (django)
 # - Database (sqlite)
 
+# Bootstrap - framework used for front end development
+# saves a lot of time dealing with css manually
+# boostrap 4 is currentply in development
