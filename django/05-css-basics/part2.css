@@ -1,0 +1,22 @@
+body {
+  /* background-color: gray; */
+  background: url(https://www.resortcollection.com/wp-content/uploads/2018/08/fallfun-e1567698300134.jpg);
+  background-repeat: no-repeat;
+  /* background-repeat: repeat; */
+}
+
+div {
+  background-color: red;
+  border-color: blue;
+  border-width: 2px;
+  border-style: double;
+}
+
+p {
+  color: green;
+}
+
+span {
+  background: red;
+  color: black;
+}

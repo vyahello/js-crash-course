@@ -1,0 +1,32 @@
+div {
+  color: red;
+}
+
+.firstDiv {
+  color: blue;
+}
+
+#singledout {
+  color: green;
+  text-decoration: line-through;
+}
+
+/* elevery element */
+/* * {
+  color: black;
+} */
+
+/* create border */
+h3 + ul {
+  border: 4px dotted purple;
+}
+
+/* all anchor tags inside the list */
+li a {
+  color: red;
+}
+
+list a[href="www.npr.org"] {
+  color: blue;
+  border: 5px solid orange;
+}
