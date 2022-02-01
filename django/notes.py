@@ -110,3 +110,15 @@
 # Syntax templates
 # {{ insert_me }} in html - we use render({'insert_me': 'Hello'}) in views.py
 # render(request, 'index.html', context=dict_)
+#
+# Static files for images,css,js files
+# {% load staticfiles %}
+# <img src={%static "images/pic.jpg" %}>
+#
+# add STATIC_DIR variable in settings.py
+# create STATICFILES_DIRS list in settings.py
+#
+# load file
+# <link rel="stylesheet" href="{% static "css/style.css" %}">
+# <img src="{% static "images/pic1.jpg" %}">
+
