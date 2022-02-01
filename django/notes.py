@@ -57,7 +57,7 @@
 
 ###### Backend Django ######
 # Django - free open source web framework.
-# Django - user requests URL -> goes to url.py file which calls 'views.py' file
+# Django - user requests URL -> goes to urls.py file which calls 'views.py' file
 # then goes call 'models.py' which store information about your database
 # that will query database for information -
 # feed it back to views.py (creates view of your site that it actually
@@ -70,7 +70,7 @@
 # - django-admin startproject first_project
 # files:
 # - settings.py - project settings
-# - url.py - store all URL patterns (re) for your project,
+# - urls.py - store all URL patterns (re) for your project,
 # different pages of your web app
 # - manage.py - command executor
 # - wsgi.py - web server gateway interface, help to deploy app on server
@@ -95,5 +95,18 @@
 # Map this view to urls.py file to 'urlpatterns' var
 # Run python manage.py runserver
 #
+# URLS
+# include django func will link urls
+# create urls.py file in first_app package, create urlpatterns variable
+# urls.py
+# url(r'help/', views.help, name='help'),
+# when user goes to /help it will call views.help route
 #
-
+# Templates
+# pattern - first_project/templates/first_app
+# add TEMPLATES var and edit DIR var in settings.py
+# create index.html in templates/first_app dir
+#
+# Syntax templates
+# {{ insert_me }} in html - we use render({'insert_me': 'Hello'}) in views.py
+# render(request, 'index.html', context=dict_)
