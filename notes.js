@@ -91,3 +91,10 @@ const sort = function (arr) {
   }
   return arr  
 };
+
+// remove element from array
+function remove() {
+  let remName = prompt("What name to remove?");
+  let index = roster.indexOf(remName);
+  roster.splice(index, 1);
+}
