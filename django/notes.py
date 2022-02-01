@@ -46,16 +46,54 @@
 # Interacting with DOM and making HTTP requests (AJAX)
 # how to use - link CDN file, download .js file
 # large file - https://code.jquery.com/jquery-3.1.1.js
-
+#
 ## jQuery
 # var divs = $('div');
 # $(el).css('border-width', '20px');
-
+#
 ## Vanilla
 # var divs = document.querySelectorAll('div');
 # el.style.borderWidth = '20px';
 
-###### Backend ######
-# Django - user requests URL -> goest to url.py file which calls 'views.py' file
+###### Backend Django ######
+# Django - free open source web framework.
+# Django - user requests URL -> goes to url.py file which calls 'views.py' file
 # then goes call 'models.py' which store information about your database
-# that will query database for information - feed it back to views.py (creates view of your site that it actually looks like), then we use 'templates' to fill out views (html, css, js) and then we send back to user.
+# that will query database for information -
+# feed it back to views.py (creates view of your site that it actually
+# looks like), then we use 'templates' to fill out views (html, css, js)
+# and then we send back to user.
+# Anaconda used to create venv
+#
+# Install via pip:
+# - django-admin tool is available
+# - django-admin startproject first_project
+# files:
+# - settings.py - project settings
+# - url.py - store all URL patterns (re) for your project,
+# different pages of your web app
+# - manage.py - command executor
+# - wsgi.py - web server gateway interface, help to deploy app on server
+#
+# Run server:
+# python manage.py runserver
+#
+# DB migration - allows to move databases from one design to another.
+# add field, new column etc.
+#
+# Create django app
+# python manage.py startapp first_app
+# - admin.py - register your models
+# - apps.py - place for an app configuration
+# - models.py - app data models
+# - tests.py - store test functions
+# - views.py - handle requests and return responses
+# - migrations - stores db info as it relates to models
+#
+# Add 'first_app' to INSTALLED_APPS list
+# Next create a 'view' (index) - like routes in flask
+# Map this view to urls.py file to 'urlpatterns' var
+# Run python manage.py runserver
+#
+#
+

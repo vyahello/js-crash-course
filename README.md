@@ -1,6 +1,6 @@
-# JS bootcamp
+# Fullstack bootcamp
 
-> Javascript crash course based on [Udemy JS training](https://www.udemy.com/course/the-complete-javascript-course). Stands for learning target only.
+> Javascript & Django crash course based on [Udemy JS training](https://www.udemy.com/course/the-complete-javascript-course). Stands for learning reference only.
 
 ## Tools
 
