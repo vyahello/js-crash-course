@@ -42,3 +42,20 @@
 # DOM - allows us to interface our JS code to interact with HTML and CSS, browsers construct DOM
 
 # jQuery
+# jQuery - js library - large single .js file that has many pre-built methods and objects that simplify your workflow
+# Interacting with DOM and making HTTP requests (AJAX)
+# how to use - link CDN file, download .js file
+# large file - https://code.jquery.com/jquery-3.1.1.js
+
+## jQuery
+# var divs = $('div');
+# $(el).css('border-width', '20px');
+
+## Vanilla
+# var divs = document.querySelectorAll('div');
+# el.style.borderWidth = '20px';
+
+###### Backend ######
+# Django - user requests URL -> goest to url.py file which calls 'views.py' file
+# then goes call 'models.py' which store information about your database
+# that will query database for information - feed it back to views.py (creates view of your site that it actually looks like), then we use 'templates' to fill out views (html, css, js) and then we send back to user.
