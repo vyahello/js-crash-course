@@ -185,6 +185,20 @@
 # edit urls.py
 # register models in admin.py
 # create migrations
-# make html files in templates folder
-
+# make html files that reads view data (using jinja) in templates folder
+#
+# Django forms (login forms, register forms)
+# create forms.py file in basicapp folder
+# inside view import form - from forms import Form. Similar to models
+# create view for the form
+# add view to the apps urls
+# update settings.py, create templates/app/form.html
+# include forms in html via {{form}} syntax
+# < form method = "post" >
+# {{form.as_p}}
+# {% csrf_token%}
+# < input type = "submit" class ="btn btn-primary" value="Submit" >
+# </form>
+# {% csrf_token %} - cross site request forgery token -
+# secures http post action. Form passed from the user to html via POST req
 
