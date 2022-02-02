@@ -204,5 +204,12 @@
 # secures http post action. Form passed from the user to html via POST req
 #
 ### TEMPLATES tagging, inheriting
-
-
+# Relative URLs
+# <a href="{% url 'basic_app:other' %}"></a> looks for other name in urls.py
+# then go to basic_app/other/ endpoint
+#
+# Inheritance
+# {% extends "basic_app/base.html" %}
+# {% block body_block %}
+# <html></html>
+# {% endblock %}
