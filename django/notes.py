@@ -187,7 +187,8 @@
 # create migrations
 # make html files that reads view data (using jinja) in templates folder
 #
-# Django forms (login forms, register forms)
+# Django FORMS (login forms, register forms)
+# grab info from the user and do something with it on the backend.
 # create forms.py file in basicapp folder
 # inside view import form - from forms import Form. Similar to models
 # create view for the form
@@ -201,4 +202,7 @@
 # </form>
 # {% csrf_token %} - cross site request forgery token -
 # secures http post action. Form passed from the user to html via POST req
+#
+### TEMPLATES tagging, inheriting
+
 
