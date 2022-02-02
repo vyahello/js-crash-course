@@ -107,16 +107,26 @@
 # add TEMPLATES var and edit DIR var in settings.py
 # create index.html in templates/first_app dir
 #
+# add STATIC_DIR variable in settings.py
+# create STATICFILES_DIRS list in settings.py
+#
 # Syntax templates
 # {{ insert_me }} in html - we use render({'insert_me': 'Hello'}) in views.py
 # render(request, 'index.html', context=dict_)
 #
+# Read data from views to html
+#
+# for acc in access_records %}
+# <tr>
+# <td> {{acc.name}} </td>
+# <td> {{acc.date}} </td>
+# </tr>
+# {% endfor %}
+# </ table>
+#
 # Static files for images,css,js files
 # {% load staticfiles %}
 # <img src={%static "images/pic.jpg" %}>
-#
-# add STATIC_DIR variable in settings.py
-# create STATICFILES_DIRS list in settings.py
 #
 # load file
 # <link rel="stylesheet" href="{% static "css/style.css" %}">
@@ -160,4 +170,21 @@
 # python manage.py createsuperuser
 #
 # Go to http://127.0.0.1:8000/admin to check admin page
+#
+# Django is known as Models-Templates-Views (MTV) paradigm
+# 1. import models to views.py file,
+# 2. use view to query the model for data we will need
+# 3. pass results from the model to the template
+#
+#### Basic project workflow creation ####
+# django-admin startproject first_project
+# cd first_project && python manage.py startapp first_app
+# create templates, static folder - edit settings.py file with constants
+# create db model in models.py (tables, column foreign keys)
+# create view - use data from models
+# edit urls.py
+# register models in admin.py
+# create migrations
+# make html files in templates folder
+
 
