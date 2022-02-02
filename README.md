@@ -9,6 +9,7 @@
 - CSS3
 - Python
 - Django
+- SQLite
 
 ## Meta
 

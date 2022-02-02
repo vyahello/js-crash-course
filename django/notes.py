@@ -55,7 +55,7 @@
 # var divs = document.querySelectorAll('div');
 # el.style.borderWidth = '20px';
 
-###### Backend Django ######
+########### Backend Django ###########
 # Django - free open source web framework.
 # Django - user requests URL -> goes to urls.py file which calls 'views.py' file
 # then goes call 'models.py' which store information about your database
@@ -82,7 +82,7 @@
 # add field, new column etc.
 #
 # Create django app
-# python manage.py startapp first_app
+# cd first_project && python manage.py startapp first_app
 # - admin.py - register your models
 # - apps.py - place for an app configuration
 # - models.py - app data models
@@ -121,4 +121,43 @@
 # load file
 # <link rel="stylesheet" href="{% static "css/style.css" %}">
 # <img src="{% static "images/pic1.jpg" %}">
+#
+# Django is knows as MTV - models, templates and views frame
+#
+# Django - models - accept info from a user input into a database
+# We use models to add database into django project.
+# Django comes with SQLite (but we can use different engine backends)
+# Edit ENGINE var in settings.py,
+# create models class in models.py, class inherits Model class
+#
+# SQL
+# primary key - unique id for each row in a table
+# foreign key - note that column along with a primary key of another table
+#
+# Migrate db
+# python manage.py migrate
+# python manage.py makemigrations app1
+# python manage.py migrate (one more time)
+#
+# Check migrations
+# python manage.py shell
+# >>> from first_app.models import Topic
+# >>> print(Topic.objects.all)
+# <bound method BaseManager.all of <django.db.models.manager.Manager object>
+# >>> print(Topic.objects.all())
+# <QuerySet []>
+# >>> t = Topic(top_name='Social')
+# >>> t
+# <Topic: Social>
+# >>> t.save()
+# >>> print(Topic.objects.all())
+# <QuerySet [<Topic: Social>]>
+
+# Register models
+# admin.site.register(Model1)
+#
+# Create superuser
+# python manage.py createsuperuser
+#
+# Go to http://127.0.0.1:8000/admin to check admin page
 
