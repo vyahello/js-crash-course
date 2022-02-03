@@ -219,3 +219,11 @@
 # call upper method on passed text
 # create basic_app/templates_tags/extras.py to ass custom filter tags e.g
 # <h2>{{text|cut:"man"}}</h2> - calls cut func on passed text
+#
+# Django passwords, login, registration
+# add django.contrib.auth and django.contrib.contenttypes to INSTALLED_APPS
+# never store passwords as plain text, use SHA256 hash, use bcrypt
+# pass in settings.py PASSWORD_HASHERS
+# create PASSWORD_HASHERS in settings.py
+
+
