@@ -213,3 +213,9 @@
 # {% block body_block %}
 # <html></html>
 # {% endblock %}
+#
+# Template filter
+# <h2>{{text|upper}}</h2> -> render(r, 'basic_app/index.html', {'text': 'la'})
+# call upper method on passed text
+# create basic_app/templates_tags/extras.py to ass custom filter tags e.g
+# <h2>{{text|cut:"man"}}</h2> - calls cut func on passed text
