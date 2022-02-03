@@ -225,5 +225,18 @@
 # never store passwords as plain text, use SHA256 hash, use bcrypt
 # pass in settings.py PASSWORD_HASHERS
 # create PASSWORD_HASHERS in settings.py
+#
+# Similar to jinja but different to django template engine.
+#### User models  ####
+# [Register] fill in forms and models in basic_app folder
+#
+# Login
+# LOGIN_URL = '/basic_app/user_login' in settings.py
+# @login_required decorator to 'user_logout' func
+# create login form in login.html
+
+
+
+
 
 
