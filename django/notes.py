@@ -139,6 +139,8 @@
 # Django comes with SQLite (but we can use different engine backends)
 # Edit ENGINE var in settings.py,
 # create models class in models.py, class inherits Model class
+# Model School (table in db) and model Student (table in db)
+# Student refers to School (foreign key)
 #
 # SQL
 # primary key - unique id for each row in a table
@@ -271,4 +273,11 @@
 # create view with django.views.generic.View class
 # and use 'views.CBView.as_view()' in urls.py
 #
-
+# Template CBV -> class IndexView(TemplateView) in views.py
+# Detail/List View
+# List View
+#
+# class SchoolListView(ListView) in views.py
+# class SchoolDetailView(ListView) in views.py
+# add urls in urls.py e.g views.SchoolListView.as_view()
+#
