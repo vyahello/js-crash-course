@@ -281,3 +281,6 @@
 # class SchoolDetailView(ListView) in views.py
 # add urls in urls.py e.g views.SchoolListView.as_view()
 #
+# CRUD
+# SchoolCreateView, SchoolUpdateView, SchoolDeleteView in view.py
+#
