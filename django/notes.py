@@ -178,7 +178,7 @@
 #
 #### Basic project workflow creation ####
 # django-admin startproject first_project
-# cd first_project && python manage.py startapp first_app
+# cd first_project && django-admin startapp first_app
 # create templates, static folder - edit settings.py file with constants
 # create db model in models.py (tables, column foreign keys)
 # create view - use data from models
@@ -234,9 +234,41 @@
 # LOGIN_URL = '/basic_app/user_login' in settings.py
 # @login_required decorator to 'user_logout' func
 # create login form in login.html
-
-
-
-
-
+#
+### Deployment ###
+# go to pythonanywhere
+# bash -> mkvirtualenv --python=python3.7 dj
+# clone repo
+# python app/manage.py migrate
+# python app/manage.py makemigrations app
+# python app/manage.py createsuperuser
+# dashboard - web - add new app
+# go to manual configuration
+# go to "Enter path to a virtualenv, if desired"
+# virtualenv - /home/djangoBasics/.virtualenvs/dj
+# source code - /home/djangoBasics/django-template/app
+# open wsgi.py and edit
+#
+# add pythonanywhere host to allowed hosts
+#
+# import os
+# import sys
+# if path not in sys.path:
+#   sys.path.append(path)
+# os.chdir(path)
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
+# import django
+# django.setup()
+# from django.core.wsgi import get_wsgi_application
+# application = get_wsgi_application()
+#
+# fix static files
+# add /static/admin url and '/home/djangoBasics/.virtualenvs/dj/lib/python3.7/site-packages/django/contrib/admin/static/admin' dir
+# add /static and '/home/djangoBasics/django-template/app/static' url
+# disable debug mode in settings.py
+#
+# CBV (class based views) define view using classes.
+# create view with django.views.generic.View class
+# and use 'views.CBView.as_view()' in urls.py
+#
 
