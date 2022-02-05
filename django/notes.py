@@ -284,3 +284,10 @@
 # CRUD
 # SchoolCreateView, SchoolUpdateView, SchoolDeleteView in view.py
 #
+# Debug
+# Debug toolbar
+# pip install django-debug-toolbar
+# add debug_toolbar in INSTALLED_APPS
+# in urls.py -> add if settings.DEBUG: ...
+# add 'debug_toolbar.middleware.DebugToolbarMiddleware' in MIDDLEWARE in sett
+# add INTERNAL_IPS = ['127.0.0.1'] in settings.py
