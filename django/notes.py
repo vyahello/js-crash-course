@@ -291,3 +291,10 @@
 # in urls.py -> add if settings.DEBUG: ...
 # add 'debug_toolbar.middleware.DebugToolbarMiddleware' in MIDDLEWARE in sett
 # add INTERNAL_IPS = ['127.0.0.1'] in settings.py
+#
+# Customize admin
+# create templates -> admin -> base_site.html
+# from https://github.com/django/django/tree/main/django/contrib/admin/templates/admin
+# add 'DIRS': [os.path.join(BASE_DIR, 'templates')] in settings.py
+# Order fields - admin.py admin.site.register(models.Movie, MovieAdmin)
+# list_filter of MovieAdmin for filtering in admin
